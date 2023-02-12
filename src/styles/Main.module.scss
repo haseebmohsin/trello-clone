@@ -7,9 +7,10 @@
   flex: 1;
 }
 
-.main {
+.main_content {
   background: #f5f5f5;
   min-height: calc(100vh - 76px);
+  padding: 20px;
 }
 
 /* Enable hover only on non-touch devices */

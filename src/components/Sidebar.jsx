@@ -1,8 +1,13 @@
 import React from 'react';
 import styles from '@/styles/Sidebar.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 function Sidebar() {
+  const router = useRouter();
+  const path = router.pathname;
+
   return (
     <aside className={styles.sidebar}>
       <div className={styles.header}>
@@ -13,9 +18,9 @@ function Sidebar() {
               <path
                 d='M5.5 8.25L11 13.75L16.5 8.25'
                 stroke='#5F5F5F'
-                stroke-width='1.5'
-                stroke-linecap='round'
-                stroke-linejoin='round'
+                strokeWidth='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
               />
             </svg>
           </div>
@@ -26,16 +31,16 @@ function Sidebar() {
               <path
                 d='M9.16667 14.1666L5 9.99998L9.16667 5.83331'
                 stroke='#8E8E8E'
-                stroke-width='1.5'
-                stroke-linecap='round'
-                stroke-linejoin='round'
+                strokeWidth='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
               />
               <path
                 d='M15 14.1666L10.8334 9.99998L15 5.83331'
                 stroke='#8E8E8E'
-                stroke-width='1.5'
-                stroke-linecap='round'
-                stroke-linejoin='round'
+                strokeWidth='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
               />
             </svg>
           </span>
@@ -44,14 +49,20 @@ function Sidebar() {
       <div className={styles.navigation}>
         <nav>
           <ul>
-            <li>
+            <li className={path === '/dashboard' ? `${styles.active}` : ''}>
               <Image src='./sidebar-svg/dashboard.svg' alt='dashboard' width={22} height={22} />
-              <span className={styles.navigation_item}>Dashboard</span>
+              <Link href='dashboard'>
+                <span className={styles.navigation_item}>Dashboard</span>
+              </Link>
             </li>
-            <li className={styles.active}>
+
+            <li className={path === '/workflow' ? `${styles.active}` : ''}>
               <Image src='./sidebar-svg/workflow.svg' alt='workflow' width={22} height={22} />
-              <span className={styles.navigation_item}>Workflow</span>
+              <Link href='workflow'>
+                <span className={styles.navigation_item}>Workflow</span>
+              </Link>
             </li>
+
             <li>
               <Image src='./sidebar-svg/calender.svg' alt='calender' width={22} height={22} />
               <span className={styles.navigation_item}>Calender</span>
