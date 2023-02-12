@@ -49,9 +49,9 @@ function Sidebar() {
       <div className={styles.navigation}>
         <nav>
           <ul>
-            <li className={path === '/dashboard' ? `${styles.active}` : ''}>
+            <li className={path === '/' ? `${styles.active}` : ''}>
               <Image src='./sidebar-svg/dashboard.svg' alt='dashboard' width={22} height={22} />
-              <Link href='dashboard'>
+              <Link href='/'>
                 <span className={styles.navigation_item}>Dashboard</span>
               </Link>
             </li>

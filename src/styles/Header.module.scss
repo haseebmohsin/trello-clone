@@ -16,7 +16,7 @@
     text-align: center;
     margin-right: 8px;
     height: 40;
-    padding: 0 8px;
+    gap: 8px;
   }
 
   .column1 {
@@ -29,9 +29,8 @@
     .innerContainer {
       display: flex;
       align-items: center;
-      gap: 5px;
-      padding: 2px 8px;
-      margin-right: 13px;
+      padding: 2px 2px;
+      margin-right: 3px;
     }
 
     .alert1,
@@ -47,9 +46,10 @@
     }
 
     .dropdownArrow {
-      margin-right: -8px;
+      background: #fff;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
+      padding: 0 5px;
     }
   }
 
@@ -68,10 +68,6 @@
       background-repeat: no-repeat;
       background-position: 10px center;
       padding-left: 40px;
-
-      // &::placeholder {
-      //   padding-left: 30px !important;
-      // }
     }
 
     .add_button {

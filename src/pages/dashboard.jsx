@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function dashboard() {
+export default function Dashboard() {
   return (
     <>
-      <div>dashboard</div>
+      <div>Dashboard</div>
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quaerat nam, velit alias exercitationem sit rem
         soluta. Vitae cupiditate ratione in dolores harum quas deleniti! Molestias ab nam odit in! Lorem ipsum dolor sit amet
