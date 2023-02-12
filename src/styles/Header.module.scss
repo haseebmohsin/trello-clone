@@ -1,0 +1,106 @@
+.header {
+  position: sticky;
+  top: 0;
+  height: 76px;
+  background: #fff;
+  border-bottom: 1px solid #ebeced;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+
+  .column1,
+  .column2,
+  .column3,
+  .column4 {
+    flex-shrink: 0;
+    text-align: center;
+    margin-right: 8px;
+    height: 40;
+    padding: 0 8px;
+  }
+
+  .column1 {
+    display: flex;
+    align-items: center;
+    background: #eff2f5;
+    border: 1px solid #eff2f5;
+    border-radius: 8px;
+
+    .innerContainer {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 8px;
+      margin-right: 13px;
+    }
+
+    .alert1,
+    .alert2 {
+      background: #faad14;
+      border-radius: 5px;
+      font-size: 13px;
+      padding: 2px 5px;
+    }
+
+    .alert2 {
+      background: #b0a1df;
+    }
+
+    .dropdownArrow {
+      margin-right: -8px;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+
+  .column3 {
+    flex: 1;
+    display: flex;
+
+    input[type="search"] {
+      flex: 1;
+      height: 40px;
+      padding: 0 10px;
+      border-radius: 5px;
+      border: 1px solid #ebeced;
+      font-size: 14px;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHWSURBVHgBtZRLTuNAEIaruu30iJkmIEUjZUbDBBbmAD4A2bGBFSt2rMwBuAAHgAv4AuyBPUs2cIFIIB4i2cAiMgoySXdRbRMeCXnwKsnudj8+d/1V1QBfbDh0tlTSKlVlK6QW1iRpclWDjwD94kwoQETcDV9NENSBbJwmF/swLlBN/d8AwlV+6oC0j+jVBFHSIQoEUpWAQgdOO7QOrfMGDDMHU8XKUQYdtGZ6dlkVZw/UZGXXSTIYNj2z7GB+sRLBCFN6LnBrvTd+LLodtGLJudlunsWjgGly6oITSydNzylzYGleEweA9dmBMU36JguMSicX+oAT7bvAtYRyZFp0rXV9WWe/EpBmvg/4lZYDfcrCj2SCsXeyTOyTJsvp1QvMjo/YQITquDxl7rK1vTI9u0y0x+/QVclIWunfHyZFeVacHL8JTH21w2VT45LbUvrvYNc5TX60xRbDyrJj13un5VOvdXNf0PqQSC4CijWppspe4WfD3Cc3XVDB+73ikb/JalfckJF0a9PmqxP21fIEu2M7MiKCpceh5LHV+QY85kBsg7BV/ows2LjdvIgHAl+CjfFCQTYgK39ZlsNDrLVeaKbyMu2DfsocNLtQhun+bihfFvBd9gCHw7CQHBrlXQAAAABJRU5ErkJggg==");
+      background-repeat: no-repeat;
+      background-position: 10px center;
+      padding-left: 40px;
+
+      // &::placeholder {
+      //   padding-left: 30px !important;
+      // }
+    }
+
+    .add_button {
+      background-color: #0e8cff;
+      border-radius: 8px;
+      color: white;
+      border: none;
+      padding: 0 15px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-right: 10px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .column4 {
+    display: flex;
+    align-items: center;
+  }
+
+  .svg_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eff2f5;
+    border-radius: 5px;
+    padding: 0 7px;
+  }
+}

@@ -1,0 +1,103 @@
+import React from 'react';
+import styles from '@/styles/Sidebar.module.scss';
+import Image from 'next/image';
+
+function Sidebar() {
+  return (
+    <aside className={styles.sidebar}>
+      <div className={styles.header}>
+        <div className={styles.brand}>
+          <div className={styles.brand_container}>
+            <span className={styles.brand_name}>Zaan Corp</span>
+            <svg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
+              <path
+                d='M5.5 8.25L11 13.75L16.5 8.25'
+                stroke='#5F5F5F'
+                stroke-width='1.5'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+              />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <span className={styles.toggler}>
+            <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+              <path
+                d='M9.16667 14.1666L5 9.99998L9.16667 5.83331'
+                stroke='#8E8E8E'
+                stroke-width='1.5'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+              />
+              <path
+                d='M15 14.1666L10.8334 9.99998L15 5.83331'
+                stroke='#8E8E8E'
+                stroke-width='1.5'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div className={styles.navigation}>
+        <nav>
+          <ul>
+            <li>
+              <Image src='./sidebar-svg/dashboard.svg' alt='dashboard' width={22} height={22} />
+              <span className={styles.navigation_item}>Dashboard</span>
+            </li>
+            <li className={styles.active}>
+              <Image src='./sidebar-svg/workflow.svg' alt='workflow' width={22} height={22} />
+              <span className={styles.navigation_item}>Workflow</span>
+            </li>
+            <li>
+              <Image src='./sidebar-svg/calender.svg' alt='calender' width={22} height={22} />
+              <span className={styles.navigation_item}>Calender</span>
+            </li>
+            <li>
+              <Image src='./sidebar-svg/socialRM.svg' alt='socialRM' width={22} height={22} />
+              <span className={styles.navigation_item}>SocialRM</span>
+            </li>
+            <li>
+              <Image src='./sidebar-svg/metrics.svg' alt='metrics' width={22} height={22} />
+              <span className={styles.navigation_item}>Metrics</span>
+            </li>
+            <li>
+              <Image src='./sidebar-svg/leads.svg' alt='leads' width={22} height={22} />
+              <span className={styles.navigation_item}>Leads</span>
+            </li>
+            <li>
+              <Image src='./sidebar-svg/users.svg' alt='users' width={22} height={22} />
+              <span className={styles.navigation_item}>Users</span>
+            </li>
+            <li>
+              <Image src='./sidebar-svg/notifications.svg' alt='notifications' width={22} height={22} />
+              <span className={styles.navigation_item}>Notifications</span>
+            </li>
+            <li>
+              <Image src='./sidebar-svg/documents.svg' alt='documents' width={22} height={22} />
+              <span className={styles.navigation_item}>Documents</span>
+            </li>
+            <li>
+              <Image src='./sidebar-svg/segments.svg' alt='segments' width={22} height={22} />
+              <span className={styles.navigation_item}>Segments</span>
+            </li>
+          </ul>
+
+          <hr />
+
+          <ul>
+            <li>
+              <Image src='./sidebar-svg/company.svg' alt='company' width={22} height={22} />
+              <span className={styles.navigation_item}>Company</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+  );
+}
+
+export default Sidebar;

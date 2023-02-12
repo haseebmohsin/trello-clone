@@ -1,0 +1,72 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 270px;
+  background: #fff;
+  border-right: 1px solid #ebeced;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .header {
+    height: 76px;
+    border-bottom: 1px solid #ebeced;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .brand_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+
+    .brand_name {
+      &::before {
+        content: "";
+        position: absolute;
+        left: -20px;
+        top: 4px;
+        width: 14px;
+        height: 14px;
+        background: #27e1bf;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+      padding: 15px 20px;
+
+      li {
+        text-decoration: none;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding: 11px 10px;
+        color: #070f21;
+        opacity: 0.8;
+
+        .navigation_item {
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 20px;
+          margin-left: 25px;
+        }
+
+        &.active {
+          background: #f6f6ff;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
