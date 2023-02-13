@@ -31,16 +31,16 @@ export default function Header() {
 
           <div className={styles.column1_avatars_container}>
             <div>
-              <Image src='/header-images/h2a1.png' alt='avatar1' width={30} height={30} />
+              <Image src='/header-images/h2avatar1.png' alt='avatar1' width={30} height={30} />
             </div>
             <div>
-              <Image src='/header-images/h2a2.png' alt='avatar2' width={30} height={30} />
+              <Image src='/header-images/h2avatar2.png' alt='avatar2' width={30} height={30} />
             </div>
             <div>
-              <Image src='/header-images/h2a3.png' alt='avatar3' width={30} height={30} />
+              <Image src='/header-images/h2avatar3.png' alt='avatar3' width={30} height={30} />
             </div>
             <div>
-              <Image src='/header-images/h2a4.png' alt='avatar4' width={30} height={30} />
+              <Image src='/header-images/h2avatar4.png' alt='avatar4' width={30} height={30} />
             </div>
           </div>
         </div>

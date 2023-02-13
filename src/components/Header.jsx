@@ -7,10 +7,10 @@ export default function Header() {
       <header className={styles.header}>
         <div className={styles.column1}>
           <div className={styles.innerContainer}>
-            <Image src='/header-images/h1a3.png' alt='avatar3' width={30} height={30} />
+            <Image src='/header-images/h1avatar1.png' alt='avatar3' width={30} height={30} />
             <span className={styles.alert1}>15</span>
             <span style={{ color: '#070F21', opacity: 0.25 }}>|</span>
-            <Image src='/header-images/h1a2.png' alt='avatar2' width={30} height={30} />
+            <Image src='/header-images/h1avatar2.png' alt='avatar2' width={30} height={30} />
             <span className={styles.alert2}>11</span>
           </div>
           <div className={styles.dropdownArrow}>
@@ -39,7 +39,7 @@ export default function Header() {
           <div className={styles.svg_container}>
             <Image src='/header-svg/chat.svg' alt='chat' width={22} height={36} />
           </div>
-          <Image src='/header-images/h1a1.png' alt='avatar1' width={33} height={33} />
+          <Image src='/header-images/h1avatar3.png' alt='avatar1' width={33} height={33} />
         </div>
       </header>
     </>
