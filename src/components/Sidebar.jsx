@@ -86,6 +86,7 @@ function Sidebar() {
             <li>
               <Image src='./sidebar-svg/notifications.svg' alt='notifications' width={22} height={22} />
               <span className={styles.navigation_item}>Notifications</span>
+              <span className={styles.navigation_item}>n</span>
             </li>
             <li>
               <Image src='./sidebar-svg/documents.svg' alt='documents' width={22} height={22} />
