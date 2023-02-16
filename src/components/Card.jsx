@@ -26,7 +26,21 @@ export default function Card({ cardData }) {
 
           <div className={styles.card_footer}>
             <div className={styles.card_footer_row_1}>
-              <Image src='/main-svg/linesMenu.svg' alt='file' width={18} height={18} />
+              <div className={styles.card_footer_row_1_block}>
+                <Image src='/main-svg/linesMenu.svg' alt='linesMenu' width={18} height={18} />
+              </div>
+              <div className={styles.card_footer_row_1_block}>
+                <Image src='/main-svg/message.svg' alt='message' width={17} height={17} />
+                <span>12</span>
+              </div>
+              <div className={styles.card_footer_row_1_block}>
+                <Image src='/main-svg/checklist.svg' alt='checklist' width={18} height={18} />
+                <span>8/9</span>
+              </div>
+              <div className={styles.card_footer_row_1_block}>
+                <Image src='/main-svg/link.svg' alt='link' width={18} height={18} />
+                <span>2</span>
+              </div>
             </div>
             <div className={styles.card_footer_row_2}>
               <div className={styles.card_footer_row_2_text}>Created {cardData.created}</div>

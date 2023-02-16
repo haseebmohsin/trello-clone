@@ -1,0 +1,83 @@
+.add_card_container {
+    .row_1,
+    .row_2,
+    .row_3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .row_1 {
+        margin-bottom: 12px;
+
+        .left {
+            font-weight: 500;
+            opacity: 0.8;
+            font-size: 15px;
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .row_2 {
+        margin-bottom: 12px;
+
+        textarea {
+            border: 2px solid #d4d4d4;
+            border-radius: 5px;
+            outline: none;
+            padding: 7px;
+            height: 60px;
+            resize: none;
+            font-size: 12px;
+            width: 100%;
+
+            &::placeholder {
+                color: gray;
+            }
+
+            &:focus {
+                border: 1px solid #0e8cff;
+                box-shadow: 0 0 0 1px #0e8cff;
+            }
+        }
+    }
+
+    .row_3 {
+        .left {
+            flex: 1;
+        }
+
+        select {
+            background: #fff;
+            border-radius: 8px;
+            color: gray;
+            border: none;
+            padding: 10px 3px;
+            width: 100%;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 2px rgba(14, 140, 255, 0.4);
+            }
+        }
+
+        button {
+            background-color: #0e8cff;
+            border-radius: 8px;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-left: 12px;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

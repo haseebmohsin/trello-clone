@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 10px;
-    padding: 5px;
 
     // Media queries
     @media only screen and (max-width: 768px) {
@@ -16,7 +15,8 @@
     .cards_outer_container {
         background: #eeeeee;
         border-radius: 5px;
-        padding: 12px 5px 5px;
+        height: fit-content;
+        padding: 5px;
 
         .cards_outer_container_header {
             display: flex;
@@ -34,8 +34,6 @@
         .cards_outer_container_body {
             max-height: 950px;
             overflow-y: auto;
-            // padding: 0 5px 5px 0;
-            // padding-right: 20px;
 
             &::-webkit-scrollbar {
                 width: 0.2rem;
@@ -128,6 +126,23 @@
                     display: flex;
                     flex-direction: column;
                     margin-top: 10px;
+
+                    .card_footer_row_1 {
+                        display: flex;
+                        align-items: center;
+
+                        .card_footer_row_1_block {
+                            display: flex;
+                            align-items: center;
+                            margin: 0 5px;
+
+                            span {
+                                opacity: 0.7;
+                                font-size: 14px;
+                                margin-left: 4px;
+                            }
+                        }
+                    }
 
                     .card_footer_row_2 {
                         display: flex;
