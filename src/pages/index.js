@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Dashboard from './Dashboard';
+import Dashboard from './dashboard';
 
 export default function Home() {
   return (

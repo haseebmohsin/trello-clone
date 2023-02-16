@@ -1,14 +1,18 @@
+import { useState } from 'react';
 import Header from '../components/Header';
 import SubHeader from '../components/SubHeader';
 import Sidebar from '../components/sidebar';
 import '@/styles/globals.css';
 import styles from '@/styles/Main.module.scss';
-import { ContextProvider } from '@/data/context';
+import AppContext from './AppContext';
+import { cardsData } from '@/data/cardsData';
 
 export default function App({ Component, pageProps }) {
+  const [data, setData] = useState(cardsData);
+
   return (
     <>
-      <ContextProvider>
+      <AppContext.Provider value={{ data, setData }}>
         <div className={styles.container}>
           <Sidebar />
 
@@ -23,7 +27,7 @@ export default function App({ Component, pageProps }) {
             </div>
           </div>
         </div>
-      </ContextProvider>
+      </AppContext.Provider>
     </>
   );
 }

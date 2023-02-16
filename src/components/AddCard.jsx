@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Image from 'next/image';
 import styles from '@/styles/addCard.module.scss';
+import AppContext from '@/pages/AppContext';
 
-export default function AddCard({ setIsCardAdding, onAddCard }) {
+export default function AddCard({ setIsCardAdding, category }) {
+  const cards = useContext(AppContext);
+  const { data } = cards;
+
   const [formData, setFormData] = useState({
     title: '',
     project: '',
   });
-
-  const handleClose = () => {
-    setIsCardAdding(false);
-  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -21,10 +21,22 @@ export default function AddCard({ setIsCardAdding, onAddCard }) {
   };
 
   const handleAddCard = () => {
+    const oldData = data[category];
+    let lastItemId = oldData[oldData?.length - 1].id;
+
+    const newCard = {
+      id: lastItemId + 1,
+      title: formData.title,
+      project: formData.project,
+      highlighted: 'false',
+      created: '3 days ago',
+    };
+
+    // adding the new card to the array
+    oldData.push(newCard);
+
+    // toggle back the add card form
     setIsCardAdding(false);
-    const { title, project } = formData;
-    const newCard = { title, project };
-    // Pass newCard to parent component to add it to the card data array
   };
 
   return (
@@ -37,7 +49,7 @@ export default function AddCard({ setIsCardAdding, onAddCard }) {
             alt='close'
             width={18}
             height={18}
-            onClick={handleClose}
+            onClick={() => setIsCardAdding(false)}
             style={{ cursor: 'pointer' }}
           />
         </div>

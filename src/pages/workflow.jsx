@@ -1,16 +1,34 @@
 import CardsOuterContainer from '@/components/CardsOuterContainer';
 import styles from '@/styles/CardsOuterContainer.module.scss';
-import { backlogData, completedData, inProcessData, inReviewData, toDoData } from '@/data/cardsData';
+import AppContext from './AppContext';
+import { useContext } from 'react';
 
-export default function workflow() {
+export default function Workflow() {
+  const cards = useContext(AppContext);
+  const { data } = cards;
+
   return (
     <>
       <div className={styles.grid_container}>
-        <CardsOuterContainer data={backlogData} />
-        <CardsOuterContainer data={toDoData} />
-        <CardsOuterContainer data={inProcessData} />
-        <CardsOuterContainer data={inReviewData} />
-        <CardsOuterContainer data={completedData} />
+        <CardsOuterContainer data={data.backlog} length={data.backlog.length} category='Backlog' categoryShort='backlog' />
+
+        <CardsOuterContainer data={data.toDo} length={data.toDo.length} category='To Do' categoryShort='toDo' />
+
+        <CardsOuterContainer
+          data={data.inProcess}
+          length={data.inProcess.length}
+          category='In Process'
+          categoryShort='inProcess'
+        />
+
+        <CardsOuterContainer data={data.inReview} length={data.inReview.length} category='In Review' categoryShort='inReview' />
+
+        <CardsOuterContainer
+          data={data.completed}
+          length={data.completed.length}
+          category='Completed'
+          categoryShort='completed'
+        />
       </div>
     </>
   );

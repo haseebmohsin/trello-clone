@@ -8,7 +8,7 @@ export default function Card({ cardData }) {
         <div className={styles.card}>
           <div className={styles.card_header}>
             <div className={styles.card_header_left}>
-              <span className={styles.company}>ContactRM</span>
+              <span className={styles.company}>{cardData.project}</span>
             </div>
 
             <div className={styles.card_header_right}>
