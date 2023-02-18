@@ -1,5 +1,6 @@
-import styles from '@/styles/Header.module.scss';
 import Image from 'next/image';
+import SearchInput from './SearchInput';
+import styles from '@/styles/header.module.scss';
 
 export default function Header() {
   return (
@@ -26,7 +27,7 @@ export default function Header() {
 
         <div className={styles.column3}>
           <button className={styles.add_button}>+</button>
-          <input type='search' placeholder='Search' />
+          <SearchInput />
         </div>
 
         <div className={styles.column4}>

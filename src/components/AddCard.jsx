@@ -1,7 +1,8 @@
 import { useContext, useState } from 'react';
 import Image from 'next/image';
-import styles from '@/styles/addCard.module.scss';
 import AppContext from '@/pages/AppContext';
+import styles from '@/styles/addCard.module.scss';
+import { projects } from '@/data/projects';
 
 export default function AddCard({ setIsCardAdding, category }) {
   const cards = useContext(AppContext);
@@ -63,10 +64,11 @@ export default function AddCard({ setIsCardAdding, category }) {
         <div className={styles.left}>
           <select name='project' value={formData.project} onChange={handleChange}>
             <option value=''>Select Project</option>
-            <option value='ContactRM'>ContactRM</option>
-            <option value='AgentBook'>AgentBook</option>
-            <option value='Asteler.io'>Asteler.io</option>
-            <option value='DW4RTeam'>DW4RTeam</option>
+            {projects.map((item, index) => (
+              <option key={index} value={item}>
+                {item}
+              </option>
+            ))}
           </select>
         </div>
         <div className={styles.right}>

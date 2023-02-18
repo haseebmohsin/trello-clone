@@ -57,19 +57,6 @@
     flex: 1;
     display: flex;
 
-    input[type="search"] {
-      flex: 1;
-      height: 40px;
-      padding: 0 10px;
-      border-radius: 5px;
-      border: 1px solid #ebeced;
-      font-size: 14px;
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHWSURBVHgBtZRLTuNAEIaruu30iJkmIEUjZUbDBBbmAD4A2bGBFSt2rMwBuAAHgAv4AuyBPUs2cIFIIB4i2cAiMgoySXdRbRMeCXnwKsnudj8+d/1V1QBfbDh0tlTSKlVlK6QW1iRpclWDjwD94kwoQETcDV9NENSBbJwmF/swLlBN/d8AwlV+6oC0j+jVBFHSIQoEUpWAQgdOO7QOrfMGDDMHU8XKUQYdtGZ6dlkVZw/UZGXXSTIYNj2z7GB+sRLBCFN6LnBrvTd+LLodtGLJudlunsWjgGly6oITSydNzylzYGleEweA9dmBMU36JguMSicX+oAT7bvAtYRyZFp0rXV9WWe/EpBmvg/4lZYDfcrCj2SCsXeyTOyTJsvp1QvMjo/YQITquDxl7rK1vTI9u0y0x+/QVclIWunfHyZFeVacHL8JTH21w2VT45LbUvrvYNc5TX60xRbDyrJj13un5VOvdXNf0PqQSC4CijWppspe4WfD3Cc3XVDB+73ikb/JalfckJF0a9PmqxP21fIEu2M7MiKCpceh5LHV+QY85kBsg7BV/ows2LjdvIgHAl+CjfFCQTYgK39ZlsNDrLVeaKbyMu2DfsocNLtQhun+bihfFvBd9gCHw7CQHBrlXQAAAABJRU5ErkJggg==");
-      background-repeat: no-repeat;
-      background-position: 10px center;
-      padding-left: 40px;
-    }
-
     .add_button {
       background-color: #0e8cff;
       border-radius: 8px;

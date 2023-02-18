@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Card from './Card';
 import AddCard from './AddCard';
-import styles from '@/styles/CardsOuterContainer.module.scss';
+import styles from '@/styles/cardsOuterContainer.module.scss';
 
 export default function CardsOuterContainer({ data, length, category, categoryShort }) {
   const buttonClicked = useRef(null);

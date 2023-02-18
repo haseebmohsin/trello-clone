@@ -1,16 +1,24 @@
 .container {
   display: flex;
-}
 
-.right {
-  margin-left: 270px;
-  flex: 1;
-}
+  .right {
+    margin-left: 270px;
+    flex: 1;
+  }
 
-.main_content {
-  background: #f7f7f7;
-  min-height: calc(100vh - 76px);
-  padding: 15px 15px 100px 15px;
+  .main_content {
+    background: #f7f7f7;
+    min-height: calc(100vh - 76px);
+    padding: 15px 15px 100px 15px;
+  }
+
+  .absolute_icons_container {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Enable hover only on non-touch devices */

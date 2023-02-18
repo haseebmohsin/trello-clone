@@ -1,4 +1,4 @@
-export const cardsData = {
+export const store = {
   backlog: [
     { id: 1, project: 'ContactRM', title: 'Design a website', highlighted: true, created: '3 days ago' },
     { id: 2, project: 'AgentBook', title: 'Design a website', highlighted: true, created: '3 days ago' },
@@ -31,4 +31,8 @@ export const cardsData = {
   ],
 
   completed: [{ id: 1, project: 'ContactRM', title: 'Design a website', highlighted: true, created: '3 days ago' }],
+
+  // Dropdown Modal state management
+  isFilterModalOpen: false,
+  isSortByModalOpen: false,
 };

@@ -24,6 +24,21 @@
       display: flex;
       align-items: center;
       gap: 10px;
+
+      .avatar {
+        position: relative;
+
+        .avatar_badge {
+          position: absolute;
+          bottom: -2px;
+          right: -2px;
+          background: #0e8cff;
+          color: #fff;
+          border-radius: 100%;
+          padding: 0 5px;
+          font-size: 12px;
+        }
+      }
     }
   }
 
@@ -38,6 +53,7 @@
     border-radius: 5px;
     padding: 0 7px;
     cursor: pointer;
+    position: relative;
 
     img {
       opacity: 0.8;

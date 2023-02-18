@@ -1,12 +1,35 @@
+import { useContext } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import styles from '@/styles/SubHeader.module.scss';
+import AppContext from '@/pages/AppContext';
+import styles from '@/styles/subHeader.module.scss';
+import FilterDropdownModal from './modals/FilterDropdownModal';
+import SortByDropdownModal from './modals/SortByDropdownModal';
 
-export default function Header() {
+export default function SubHeader() {
   const router = useRouter();
   const lastSlashIndex = router.pathname.lastIndexOf('/');
   const lettersAfterLastSlash = router.pathname.substring(lastSlashIndex + 1);
   const currentRouteName = lettersAfterLastSlash.charAt(0).toUpperCase() + lettersAfterLastSlash.slice(1);
+
+  const { data, setData } = useContext(AppContext);
+  const { isFilterModalOpen, isSortByModalOpen } = data;
+
+  const toggleSortByModal = () => {
+    setData({
+      ...data,
+      isSortByModalOpen: !isSortByModalOpen,
+      isFilterModalOpen: false,
+    });
+  };
+
+  const toggleFilterModal = () => {
+    setData({
+      ...data,
+      isFilterModalOpen: !isFilterModalOpen,
+      isSortByModalOpen: false,
+    });
+  };
 
   return (
     <>
@@ -30,17 +53,24 @@ export default function Header() {
           <span style={{ color: '#070F21', opacity: 0.25 }}>|</span>
 
           <div className={styles.column1_avatars_container}>
-            <div>
+            <div className={styles.avatar}>
               <Image src='/header-images/h2avatar1.png' alt='avatar1' width={30} height={30} />
+              <div className={styles.avatar_badge}>2</div>
             </div>
-            <div>
+
+            <div className={styles.avatar}>
               <Image src='/header-images/h2avatar2.png' alt='avatar2' width={30} height={30} />
+              <div className={styles.avatar_badge}>5</div>
             </div>
-            <div>
+
+            <div className={styles.avatar}>
               <Image src='/header-images/h2avatar3.png' alt='avatar3' width={30} height={30} />
+              <div className={styles.avatar_badge}>1</div>
             </div>
-            <div>
+
+            <div className={styles.avatar}>
               <Image src='/header-images/h2avatar4.png' alt='avatar4' width={30} height={30} />
+              <div className={styles.avatar_badge}>4</div>
             </div>
           </div>
         </div>
@@ -49,20 +79,30 @@ export default function Header() {
           <div className={styles.svg_container}>
             <Image src='/header-svg/pin.svg' alt='pin' width={22} height={36} />
           </div>
+
           <div className={styles.svg_container}>
             <Image src='/header-svg/doubleFile.svg' alt='doubleFile' width={22} height={36} />
           </div>
+
           <div className={styles.svg_container}>
             <Image src='/header-svg/views.svg' alt='views' width={22} height={36} />
             <span style={{ marginLeft: '7px' }}>Views</span>
           </div>
+
           <div className={styles.svg_container}>
             <Image src='/header-svg/filter.svg' alt='filter' width={22} height={36} />
-            <span style={{ marginLeft: '7px' }}>Filter</span>
+            <span style={{ marginLeft: '7px' }} onClick={() => toggleFilterModal()}>
+              Filter
+            </span>
+            <FilterDropdownModal title='filter' isOpen={isFilterModalOpen} toggleFilterModal={toggleFilterModal} />
           </div>
+
           <div className={styles.svg_container}>
             <Image src='/header-svg/sortBy.svg' alt='sortBy' width={22} height={36} />
-            <span style={{ marginLeft: '7px' }}>Sort By</span>
+            <span style={{ marginLeft: '7px' }} onClick={() => toggleSortByModal()}>
+              Sort By
+            </span>
+            <SortByDropdownModal title='sortBy' isOpen={isSortByModalOpen} toggleSortByModal={toggleSortByModal} />
           </div>
         </div>
       </header>

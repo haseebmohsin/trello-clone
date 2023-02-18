@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/Sidebar.module.scss';
+import styles from '@/styles/sidebar.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -49,16 +49,16 @@ function Sidebar() {
       <div className={styles.navigation}>
         <nav>
           <ul>
-            <li className={path === '/' ? `${styles.active}` : ''}>
+            <li className={path === '/dashboard' ? `${styles.active}` : ''}>
               <Image src='./sidebar-svg/dashboard.svg' alt='dashboard' width={22} height={22} />
-              <Link href='/'>
+              <Link href='/dashboard'>
                 <span className={styles.navigation_item}>Dashboard</span>
               </Link>
             </li>
 
-            <li className={path === '/workflow' ? `${styles.active}` : ''}>
+            <li className={path === '/' ? `${styles.active}` : ''}>
               <Image src='./sidebar-svg/workflow.svg' alt='workflow' width={22} height={22} />
-              <Link href='workflow'>
+              <Link href='/'>
                 <span className={styles.navigation_item}>Workflow</span>
               </Link>
             </li>
@@ -86,7 +86,6 @@ function Sidebar() {
             <li>
               <Image src='./sidebar-svg/notifications.svg' alt='notifications' width={22} height={22} />
               <span className={styles.navigation_item}>Notifications</span>
-              <span className={styles.navigation_item}>n</span>
             </li>
             <li>
               <Image src='./sidebar-svg/documents.svg' alt='documents' width={22} height={22} />
