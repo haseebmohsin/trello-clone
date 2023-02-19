@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '@/styles/sidebar.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,8 +8,14 @@ function Sidebar() {
   const router = useRouter();
   const path = router.pathname;
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleSidebarToggle = () => {
+    // setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${isSidebarOpen ? styles.open : ''}`}>
       <div className={styles.header}>
         <div className={styles.brand}>
           <div className={styles.brand_container}>
@@ -25,8 +31,8 @@ function Sidebar() {
             </svg>
           </div>
         </div>
-        <div>
-          <span className={styles.toggler}>
+        <div onClick={() => handleSidebarToggle()}>
+          <span className={`${styles.toggler} ${isSidebarOpen ? styles.active : ''}`}>
             <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
               <path
                 d='M9.16667 14.1666L5 9.99998L9.16667 5.83331'

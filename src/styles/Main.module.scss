@@ -4,6 +4,10 @@
   .right {
     margin-left: 270px;
     flex: 1;
+
+    @media (max-width: 1200px) {
+      margin-left: 0;
+    }
   }
 
   .main_content {
@@ -19,24 +23,4 @@
     display: flex;
     flex-direction: column;
   }
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  /* .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-  }
-
-  .card:hover span {
-    transform: translateX(4px);
-  } */
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
 }

@@ -26,6 +26,10 @@
     border: 1px solid #eff2f5;
     border-radius: 8px;
 
+    @media only screen and (max-width: 992px) {
+      display: none;
+    }
+
     .innerContainer {
       display: flex;
       align-items: center;
@@ -53,6 +57,12 @@
     }
   }
 
+  .column2 {
+    @media only screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+
   .column3 {
     flex: 1;
     display: flex;
@@ -69,6 +79,10 @@
 
       &:focus {
         outline: none;
+      }
+
+      @media only screen and (max-width: 992px) {
+        display: none;
       }
     }
   }
