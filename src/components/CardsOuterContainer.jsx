@@ -5,7 +5,6 @@ import AddCard from './AddCard';
 import styles from '@/styles/cardsOuterContainer.module.scss';
 
 export default function CardsOuterContainer({ data, length, category, categoryShort }) {
-  const buttonClicked = useRef(null);
   const cards_outer_container_body_ref = useRef(null);
   const [hasScrollbar, setHasScrollbar] = useState(false);
   const [isCardAdding, setIsCardAdding] = useState(false);
@@ -35,16 +34,12 @@ export default function CardsOuterContainer({ data, length, category, categorySh
           </div>
         </div>
 
-        {data?.map((item) => (
-          <div key={item.id}>
-            <div
-              className={styles.cards_outer_container_body}
-              ref={cards_outer_container_body_ref}
-              style={{ paddingRight: hasScrollbar ? '5px' : '0', marginBottom: hasScrollbar ? '10px' : '0' }}>
-              <Card cardData={item} />
-            </div>
-          </div>
-        ))}
+        <div
+          className={styles.cards_outer_container_body}
+          ref={cards_outer_container_body_ref}
+          style={{ paddingRight: hasScrollbar ? '5px' : '0', marginBottom: hasScrollbar ? '10px' : '0' }}>
+          <Card cardData={data} />
+        </div>
 
         <div className={styles.cards_outer_container_footer}>
           {isCardAdding ? (
@@ -53,10 +48,7 @@ export default function CardsOuterContainer({ data, length, category, categorySh
               <AddCard setIsCardAdding={setIsCardAdding} category={categoryShort} />
             </>
           ) : (
-            <button
-              className={styles.cards_outer_container_footer_button}
-              ref={buttonClicked}
-              onClick={() => setIsCardAdding(true)}>
+            <button className={styles.cards_outer_container_footer_button} onClick={() => setIsCardAdding(true)}>
               + Add Card
             </button>
           )}

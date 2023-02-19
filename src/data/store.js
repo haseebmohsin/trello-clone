@@ -33,6 +33,9 @@ export const store = {
   completed: [{ id: 1, project: 'ContactRM', title: 'Design a website', highlighted: true, created: '3 days ago' }],
 
   // Dropdown Modal state management
+  isPinnedCardsModalOpen: false,
+  isArchiveModalOpen: false,
   isFilterModalOpen: false,
   isSortByModalOpen: false,
+  isViewsModalOpen: false,
 };

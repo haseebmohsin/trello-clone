@@ -5,6 +5,9 @@ import AppContext from '@/pages/AppContext';
 import styles from '@/styles/subHeader.module.scss';
 import FilterDropdownModal from './modals/FilterDropdownModal';
 import SortByDropdownModal from './modals/SortByDropdownModal';
+import ViewsDropdownModal from './modals/ViewsDropdownModal';
+import ArchiveDropdownModal from './modals/ArchiveDropdownModal';
+import PinnedCardsDropdownModal from './modals/PinnedCardsDropdownModal';
 
 export default function SubHeader() {
   const router = useRouter();
@@ -13,29 +16,32 @@ export default function SubHeader() {
   const currentRouteName = lettersAfterLastSlash.charAt(0).toUpperCase() + lettersAfterLastSlash.slice(1);
 
   const { data, setData } = useContext(AppContext);
-  const { isFilterModalOpen, isSortByModalOpen } = data;
+  const { isPinnedCardsModalOpen, isArchiveModalOpen, isViewsModalOpen, isFilterModalOpen, isSortByModalOpen } = data;
 
-  const toggleSortByModal = () => {
-    setData({
-      ...data,
-      isSortByModalOpen: !isSortByModalOpen,
+  const toggleModal = (modalName) => {
+    const modalFlags = {
+      isPinnedCardsModalOpen: false,
+      isArchiveModalOpen: false,
+      isViewsModalOpen: false,
       isFilterModalOpen: false,
-    });
-  };
-
-  const toggleFilterModal = () => {
-    setData({
-      ...data,
-      isFilterModalOpen: !isFilterModalOpen,
       isSortByModalOpen: false,
-    });
+    };
+
+    const modalProps = Object.entries(modalFlags).reduce((acc, [key, value]) => {
+      if (key !== modalName) {
+        acc[key] = false;
+      }
+      return acc;
+    }, {});
+
+    setData({ ...data, [modalName]: !data[modalName], ...modalProps });
   };
 
   return (
     <>
       <header className={styles.header}>
         <div className={styles.column1}>
-          <span style={{ marginRight: '30px' }}>{router.pathname === '/' ? 'Dashboard' : currentRouteName}</span>
+          <span style={{ marginRight: '30px' }}>{router.pathname === '/' ? 'Workflow' : currentRouteName}</span>
 
           <div className={styles.svg_container_circle_first}>
             <Image src='/header-svg/workflow.svg' alt='workflow' width={22} height={36} />
@@ -77,32 +83,73 @@ export default function SubHeader() {
 
         <div className={styles.column2}>
           <div className={styles.svg_container}>
-            <Image src='/header-svg/pin.svg' alt='pin' width={22} height={36} />
+            <Image
+              src='/header-svg/pin.svg'
+              alt='pin'
+              width={22}
+              height={36}
+              onClick={() => toggleModal('isPinnedCardsModalOpen')}
+            />
+            <PinnedCardsDropdownModal
+              title='Pinned Card'
+              icon='pin'
+              isOpen={isPinnedCardsModalOpen}
+              togglePinnedCardsModal={() => toggleModal('isPinnedCardsModalOpen')}
+            />
           </div>
 
           <div className={styles.svg_container}>
-            <Image src='/header-svg/doubleFile.svg' alt='doubleFile' width={22} height={36} />
+            <Image
+              src='/header-svg/doubleFile.svg'
+              alt='doubleFile'
+              width={22}
+              height={36}
+              onClick={() => toggleModal('isArchiveModalOpen')}
+            />
+            <ArchiveDropdownModal
+              title='Archive'
+              isOpen={isArchiveModalOpen}
+              toggleArchiveModal={() => toggleModal('isArchiveModalOpen')}
+            />
           </div>
 
           <div className={styles.svg_container}>
             <Image src='/header-svg/views.svg' alt='views' width={22} height={36} />
-            <span style={{ marginLeft: '7px' }}>Views</span>
+            <span style={{ marginLeft: '7px' }} onClick={() => toggleModal('isViewsModalOpen')}>
+              Views
+            </span>
+            <ViewsDropdownModal
+              title='Views'
+              icon='views'
+              isOpen={isViewsModalOpen}
+              toggleViewsModal={() => toggleModal('isViewsModalOpen')}
+            />
           </div>
 
           <div className={styles.svg_container}>
             <Image src='/header-svg/filter.svg' alt='filter' width={22} height={36} />
-            <span style={{ marginLeft: '7px' }} onClick={() => toggleFilterModal()}>
+            <span style={{ marginLeft: '7px' }} onClick={() => toggleModal('isFilterModalOpen')}>
               Filter
             </span>
-            <FilterDropdownModal title='filter' isOpen={isFilterModalOpen} toggleFilterModal={toggleFilterModal} />
+            <FilterDropdownModal
+              title='Filter'
+              icon='filter'
+              isOpen={isFilterModalOpen}
+              toggleFilterModal={() => toggleModal('isFilterModalOpen')}
+            />
           </div>
 
           <div className={styles.svg_container}>
             <Image src='/header-svg/sortBy.svg' alt='sortBy' width={22} height={36} />
-            <span style={{ marginLeft: '7px' }} onClick={() => toggleSortByModal()}>
+            <span style={{ marginLeft: '7px' }} onClick={() => toggleModal('isSortByModalOpen')}>
               Sort By
             </span>
-            <SortByDropdownModal title='sortBy' isOpen={isSortByModalOpen} toggleSortByModal={toggleSortByModal} />
+            <SortByDropdownModal
+              title='Sort By'
+              icon='sortBy'
+              isOpen={isSortByModalOpen}
+              toggleSortByModal={() => toggleModal('isSortByModalOpen')}
+            />
           </div>
         </div>
       </header>

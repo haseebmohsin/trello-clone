@@ -5,17 +5,15 @@ import { tags } from '@/data/tags';
 import { users } from '@/data/users';
 import styles from '@/styles/dropdownModal.module.scss';
 
-const FilterDropdownModal = ({ title, isOpen, toggleFilterModal }) => {
-  const ModalTitle = title.charAt(0).toUpperCase() + title.slice(1);
-
+const FilterDropdownModal = ({ title, icon, isOpen, toggleFilterModal }) => {
   return (
     <>
       {isOpen && (
         <div className={styles.modal}>
           <div className={styles.header}>
             <div className={styles.left}>
-              <Image src={`/header-svg/${title}.svg`} alt={title} width={22} height={36} />
-              <div className={styles.title}>{ModalTitle}</div>
+              <Image src={`/header-svg/${icon}.svg`} alt={icon} width={22} height={36} />
+              <div className={styles.title}>{title}</div>
             </div>
 
             <div className={styles.close} onClick={() => toggleFilterModal()}>

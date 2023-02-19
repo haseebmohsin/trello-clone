@@ -1,7 +1,10 @@
-import Image from 'next/image';
+import { pinnedCards } from '@/data/pinnedCards';
+import Card from '../Card';
 import styles from '@/styles/dropdownModal.module.scss';
+import SearchInput from '../SearchInput';
+import Image from 'next/image';
 
-const SortByDropdownModal = ({ title, icon, isOpen, toggleSortByModal }) => {
+const PinnedCardsDropdownModal = ({ title, icon, isOpen, togglePinnedCardsModal }) => {
   return (
     <>
       {isOpen && (
@@ -12,7 +15,7 @@ const SortByDropdownModal = ({ title, icon, isOpen, toggleSortByModal }) => {
               <div className={styles.title}>{title}</div>
             </div>
 
-            <div className={styles.close} onClick={() => toggleSortByModal()}>
+            <div className={styles.close} onClick={() => togglePinnedCardsModal()}>
               <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
                 <g opacity='0.4'>
                   <path d='M3.33325 16.6668L16.6666 3.3335' stroke='#070F21' strokeWidth='2' strokeLinecap='round' />
@@ -22,14 +25,10 @@ const SortByDropdownModal = ({ title, icon, isOpen, toggleSortByModal }) => {
             </div>
           </div>
 
-          <div className={styles.body}>
-            <ul>
-              <li className={styles.active}>Order</li>
-              <li>Created date</li>
-              <li>Due date</li>
-              <li>Sitting count</li>
-              <li>Move count</li>
-            </ul>
+          <SearchInput />
+
+          <div className={styles.body} style={{ background: '#F8F8F8' }}>
+            <Card cardData={pinnedCards} />
           </div>
         </div>
       )}
@@ -37,4 +36,4 @@ const SortByDropdownModal = ({ title, icon, isOpen, toggleSortByModal }) => {
   );
 };
 
-export default SortByDropdownModal;
+export default PinnedCardsDropdownModal;
