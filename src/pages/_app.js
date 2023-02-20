@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 import SubHeader from '../components/SubHeader';
-import Sidebar from '../components/sidebar';
+import Sidebar from '../components/Sidebar';
 import AppContext from '../data/AppContext';
 import { store } from '../data/store';
 import Image from 'next/image';
