@@ -1,17 +1,16 @@
+@import "variables";
+
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // bottom: 0;
+  bottom: 0;
   width: 270px;
-  background: #fff;
-  border-right: 1px solid #ebeced;
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 999;
+  background: white;
+  border-right: 1px solid $borderGray;
   transition: transform 0.5s ease-in-out;
 
   @media (max-width: 1200px) {
@@ -23,12 +22,12 @@
   }
 
   .header {
-    height: 76px;
-    border-bottom: 1px solid #ebeced;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 76px;
     padding: 0 10px;
+    border-bottom: 1px solid $borderGray;
 
     .brand_container {
       position: relative;
@@ -45,34 +44,14 @@
           top: 4px;
           width: 14px;
           height: 14px;
-          background: #27e1bf;
           border-radius: 100%;
+          background: $green;
         }
       }
     }
 
     .toggler {
       cursor: pointer;
-      // background-color: rgb(225, 53, 53);
-      // position: fixed;
-      // top: 20px;
-      // left: 300px;
-
-      &.active {
-        background-color: rgb(167, 22, 22);
-        position: fixed;
-        top: 20px;
-        left: 300px;
-        font-size: 24px;
-      }
-
-      @media (max-width: 1200px) {
-        background-color: rgb(225, 53, 53);
-        position: fixed;
-        top: 20px;
-        left: 300px;
-        font-size: 24px;
-      }
     }
   }
 
@@ -84,13 +63,13 @@
       padding: 15px 20px;
 
       li {
-        text-decoration: none;
-        list-style: none;
-        color: #070f21;
-        opacity: 0.8;
         display: flex;
         align-items: center;
+        text-decoration: none;
+        list-style: none;
         padding: 11px 10px;
+        opacity: 0.8;
+        color: $textBlack;
 
         .navigation_item {
           font-weight: 400;
@@ -100,8 +79,8 @@
         }
 
         &.active {
-          background: #f6f6ff;
           border-radius: 10px;
+          background: $activeItemBackground;
         }
       }
     }

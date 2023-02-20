@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '@/styles/cardsOuterContainer.module.scss';
+import styles from '@/styles/card.module.scss';
 
 export default function Card({ cardData }) {
   return (
@@ -9,7 +9,9 @@ export default function Card({ cardData }) {
           <div className={styles.card}>
             <div className={styles.card_header}>
               <div className={styles.card_header_left}>
-                <div className={styles.company}>{item.project}</div>
+                <div className={styles.project}>
+                  <div className={styles.project_dot}></div> {item.project}
+                </div>
               </div>
 
               <div className={styles.card_header_right}>

@@ -1,13 +1,15 @@
+@import "variables";
+
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: sticky;
   top: 0;
   height: 60px;
-  background: #fff;
-  border-bottom: 1px solid #ebeced;
   padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-bottom: 1px solid $borderGray;
 
   .column1,
   .column2 {
@@ -32,11 +34,11 @@
           position: absolute;
           bottom: -2px;
           right: -2px;
-          background: #0e8cff;
-          color: #fff;
           border-radius: 100%;
           padding: 0 5px;
           font-size: 12px;
+          background: $primaryBlue;
+          color: white;
         }
       }
     }
@@ -49,15 +51,15 @@
   .svg_container,
   .svg_container_circle,
   .svg_container_circle_first {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #eff2f5;
-    background: #f5f5f5;
     border-radius: 5px;
     padding: 0 7px;
     cursor: pointer;
-    position: relative;
+    background: $lightGrayBackground;
+    border: 1px solid $borderGray;
 
     img {
       opacity: 0.8;
@@ -70,6 +72,10 @@
   }
 
   .svg_container_circle_first {
-    background: #0e8cff;
+    background: $primaryBlue;
+  }
+
+  @media only screen and (max-width: 992px) {
+    justify-content: end;
   }
 }

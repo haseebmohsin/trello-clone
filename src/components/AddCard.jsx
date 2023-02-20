@@ -43,7 +43,7 @@ export default function AddCard({ setIsCardAdding, category }) {
   return (
     <div className={styles.add_card_container}>
       <div className={styles.row_1}>
-        <div className={styles.left}>Title</div>
+        <div className={styles.left}>Card title</div>
         <div className={styles.right}>
           <Image
             src='/main-svg/close.svg'

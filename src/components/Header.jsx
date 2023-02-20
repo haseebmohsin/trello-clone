@@ -10,7 +10,9 @@ export default function Header() {
           <div className={styles.innerContainer}>
             <Image src='/header-images/h1avatar1.png' alt='avatar1' width={30} height={30} />
             <span className={styles.alert1}>15</span>
-            <span style={{ color: '#070F21', opacity: 0.25 }}>|</span>
+
+            <span style={{ color: '#070F21', opacity: 0.25, margin: '0 5px' }}>|</span>
+
             <Image src='/header-images/h1avatar2.png' alt='avatar2' width={30} height={30} />
             <span className={styles.alert2}>11</span>
           </div>
@@ -27,7 +29,7 @@ export default function Header() {
 
         <div className={styles.column3}>
           <button className={styles.add_button}>+</button>
-          <SearchInput />
+          <SearchInput AdditionalStyles={{ borderRadius: '5px' }} />
         </div>
 
         <div className={styles.column4}>

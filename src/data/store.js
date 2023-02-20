@@ -38,4 +38,8 @@ export const store = {
   isFilterModalOpen: false,
   isSortByModalOpen: false,
   isViewsModalOpen: false,
+
+  isListActionsModalOpen: false,
+  currentCategory: null,
+  categories: ['backlog', 'toDo', 'inProcess', 'inReview', 'completed'],
 };

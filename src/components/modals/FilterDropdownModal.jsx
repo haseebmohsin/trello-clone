@@ -5,7 +5,7 @@ import { tags } from '@/data/tags';
 import { users } from '@/data/users';
 import styles from '@/styles/dropdownModal.module.scss';
 
-const FilterDropdownModal = ({ title, icon, isOpen, toggleFilterModal }) => {
+export default function FilterDropdownModal({ title, icon, isOpen, toggleModal }) {
   return (
     <>
       {isOpen && (
@@ -16,7 +16,7 @@ const FilterDropdownModal = ({ title, icon, isOpen, toggleFilterModal }) => {
               <div className={styles.title}>{title}</div>
             </div>
 
-            <div className={styles.close} onClick={() => toggleFilterModal()}>
+            <div className={styles.close} onClick={() => toggleModal()}>
               <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
                 <g opacity='0.4'>
                   <path d='M3.33325 16.6668L16.6666 3.3335' stroke='#070F21' strokeWidth='2' strokeLinecap='round' />
@@ -26,7 +26,7 @@ const FilterDropdownModal = ({ title, icon, isOpen, toggleFilterModal }) => {
             </div>
           </div>
 
-          <div className={styles.body}>
+          <div className={styles.body} style={{ gap: '20px' }}>
             <div className={styles.projects}>
               <h4>Project</h4>
               <Checkbox label='No Project Assigned' />
@@ -34,6 +34,7 @@ const FilterDropdownModal = ({ title, icon, isOpen, toggleFilterModal }) => {
                 <Checkbox key={index} label={item} checked={item === 'ContactRM' ? true : false} />
               ))}
             </div>
+
             <div className={styles.tags}>
               <h4>Tags</h4>
               <Checkbox label='No Tags Added' />
@@ -42,12 +43,14 @@ const FilterDropdownModal = ({ title, icon, isOpen, toggleFilterModal }) => {
               ))}
               <p>Show all...</p>
             </div>
+
             <div className={styles.card}>
               <h4>Card</h4>
               <Checkbox label='Cards I Created' checked />
               <Checkbox label='Cards assigned to me' />
               <Checkbox label='All Cards' />
             </div>
+
             <div className={styles.assigned}>
               <h4>Assigned To</h4>
               <Checkbox label='Nobody Assigned' />
@@ -71,6 +74,4 @@ const FilterDropdownModal = ({ title, icon, isOpen, toggleFilterModal }) => {
       )}
     </>
   );
-};
-
-export default FilterDropdownModal;
+}

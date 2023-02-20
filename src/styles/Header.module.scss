@@ -1,12 +1,14 @@
+@import "variables";
+
 .header {
   position: sticky;
   top: 0;
   height: 76px;
-  background: #fff;
-  border-bottom: 1px solid #ebeced;
   display: flex;
   align-items: center;
   padding: 0 20px;
+  background: white;
+  border-bottom: 1px solid $borderGray;
 
   .column1,
   .column2,
@@ -22,9 +24,9 @@
   .column1 {
     display: flex;
     align-items: center;
-    background: #eff2f5;
-    border: 1px solid #eff2f5;
     border-radius: 8px;
+    background: $lightGrayBackground;
+    border: 1px solid $borderGray;
 
     @media only screen and (max-width: 992px) {
       display: none;
@@ -39,21 +41,21 @@
 
     .alert1,
     .alert2 {
-      background: #faad14;
+      background: $textBgDarkOrange;
       border-radius: 5px;
       font-size: 13px;
       padding: 2px 5px;
     }
 
     .alert2 {
-      background: #b0a1df;
+      background: $textBgPurple;
     }
 
     .dropdownArrow {
-      background: #fff;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
       padding: 0 5px;
+      background: white;
     }
   }
 
@@ -68,14 +70,14 @@
     display: flex;
 
     .add_button {
-      background-color: #0e8cff;
       border-radius: 8px;
-      color: white;
-      border: none;
       padding: 0 15px;
       font-size: 16px;
-      font-weight: bold;
       margin-right: 10px;
+      font-weight: bold;
+      border: none;
+      background: $primaryBlue;
+      color: white;
 
       &:focus {
         outline: none;
@@ -96,8 +98,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #eff2f5;
     border-radius: 5px;
     padding: 0 7px;
+    border: 1px solid $borderGray;
   }
 }

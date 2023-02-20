@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Card from './Card';
 import AddCard from './AddCard';
 import styles from '@/styles/cardsOuterContainer.module.scss';
+import ListActionsDropdownModal from './modals/ListActionsDropdownModal';
+import AppContext from '@/pages/AppContext';
 
 export default function CardsOuterContainer({ data, length, category, categoryShort }) {
   const cards_outer_container_body_ref = useRef(null);
@@ -14,6 +16,33 @@ export default function CardsOuterContainer({ data, length, category, categorySh
     const hasScrollbar = container.scrollHeight > container.clientHeight;
     setHasScrollbar(hasScrollbar);
   }, []);
+
+  const { data: store, setData } = useContext(AppContext);
+  const { isListActionsModalOpen } = store;
+
+  const toggleModal = (modalName, category) => {
+    const modalFlags = {
+      isPinnedCardsModalOpen: false,
+      isArchiveModalOpen: false,
+      isViewsModalOpen: false,
+      isFilterModalOpen: false,
+      isSortByModalOpen: false,
+      isListActionsModalOpen: false,
+    };
+
+    const modalProps = Object.entries(modalFlags).reduce((acc, [key, value]) => {
+      if (key !== modalName) {
+        acc[key] = false;
+      } else if (store[modalName] && store.currentCategory === category) {
+        acc[key] = false;
+      } else {
+        acc[key] = true;
+      }
+      return acc;
+    }, {});
+
+    setData({ ...store, [modalName]: !store[modalName], ...modalProps, currentCategory: category });
+  };
 
   return (
     <>
@@ -30,7 +59,20 @@ export default function CardsOuterContainer({ data, length, category, categorySh
           </div>
 
           <div className={styles.cards_outer_container_header_right}>
-            <Image src='/main-svg/menu.svg' alt='menu' width={24} height={24} />
+            <div className={styles.modal_holder}>
+              <ListActionsDropdownModal
+                title='List Actions'
+                isOpen={isListActionsModalOpen && store.currentCategory === category}
+                toggleModal={() => toggleModal('isListActionsModalOpen', category)}
+              />
+            </div>
+            <Image
+              src='/main-svg/menu.svg'
+              alt='menu'
+              width={24}
+              height={24}
+              onClick={() => toggleModal('isListActionsModalOpen', category)}
+            />
           </div>
         </div>
 

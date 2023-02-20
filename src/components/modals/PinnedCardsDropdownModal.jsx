@@ -4,7 +4,7 @@ import styles from '@/styles/dropdownModal.module.scss';
 import SearchInput from '../SearchInput';
 import Image from 'next/image';
 
-const PinnedCardsDropdownModal = ({ title, icon, isOpen, togglePinnedCardsModal }) => {
+export default function PinnedCardsDropdownModal({ title, icon, isOpen, toggleModal }) {
   return (
     <>
       {isOpen && (
@@ -15,7 +15,7 @@ const PinnedCardsDropdownModal = ({ title, icon, isOpen, togglePinnedCardsModal 
               <div className={styles.title}>{title}</div>
             </div>
 
-            <div className={styles.close} onClick={() => togglePinnedCardsModal()}>
+            <div className={styles.close} onClick={() => toggleModal()}>
               <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
                 <g opacity='0.4'>
                   <path d='M3.33325 16.6668L16.6666 3.3335' stroke='#070F21' strokeWidth='2' strokeLinecap='round' />
@@ -27,13 +27,11 @@ const PinnedCardsDropdownModal = ({ title, icon, isOpen, togglePinnedCardsModal 
 
           <SearchInput />
 
-          <div className={styles.body} style={{ background: '#F8F8F8' }}>
+          <div className={styles.body} style={{ background: '#eff2f5' }}>
             <Card cardData={pinnedCards} />
           </div>
         </div>
       )}
     </>
   );
-};
-
-export default PinnedCardsDropdownModal;
+}

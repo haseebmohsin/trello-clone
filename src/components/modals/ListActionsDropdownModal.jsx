@@ -1,14 +1,12 @@
-import Image from 'next/image';
 import styles from '@/styles/dropdownModal.module.scss';
 
-export default function ViewsDropdownModal({ title, icon, isOpen, toggleModal }) {
+export default function ListActionsDropdownModal({ title, isOpen, toggleModal }) {
   return (
     <>
       {isOpen && (
         <div className={styles.modal}>
           <div className={styles.header}>
             <div className={styles.left}>
-              <Image src={`/header-svg/${icon}.svg`} alt={icon} width={22} height={36} />
               <div className={styles.title}>{title}</div>
             </div>
 
@@ -24,11 +22,8 @@ export default function ViewsDropdownModal({ title, icon, isOpen, toggleModal })
 
           <div className={styles.body}>
             <ul>
-              <li>My first filter</li>
-              <li className={styles.active}>Available for me</li>
-              <li>Current Tasks</li>
-              <li>Top Project</li>
-              <li>Favorites</li>
+              <li>Move all cards in this list</li>
+              <li>Archive all cards in this list</li>
             </ul>
           </div>
         </div>

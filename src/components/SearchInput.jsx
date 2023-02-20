@@ -1,3 +1,3 @@
-export default function SearchInput() {
-  return <input type='search' placeholder='Search' />;
+export default function SearchInput({ AdditionalStyles }) {
+  return <input type='search' placeholder='Search' style={AdditionalStyles} />;
 }

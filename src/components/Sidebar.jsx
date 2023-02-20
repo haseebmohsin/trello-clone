@@ -3,6 +3,7 @@ import styles from '@/styles/sidebar.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Divider from './Divider';
 
 function Sidebar() {
   const router = useRouter();
@@ -103,7 +104,7 @@ function Sidebar() {
             </li>
           </ul>
 
-          <hr />
+          <Divider />
 
           <ul>
             <li>

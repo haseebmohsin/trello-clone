@@ -1,3 +1,5 @@
+@import "variables";
+
 .add_card_container {
     .row_1,
     .row_2,
@@ -26,7 +28,6 @@
         margin-bottom: 12px;
 
         textarea {
-            border: 2px solid #d4d4d4;
             border-radius: 5px;
             outline: none;
             padding: 7px;
@@ -34,14 +35,15 @@
             resize: none;
             font-size: 12px;
             width: 100%;
+            border: 2px solid $borderGray;
 
             &::placeholder {
-                color: gray;
+                color: $textGray;
             }
 
             &:focus {
-                border: 1px solid #0e8cff;
-                box-shadow: 0 0 0 1px #0e8cff;
+                border: 1px solid $primaryBlue;
+                box-shadow: 0 0 0 1px $primaryBlue;
             }
         }
     }
@@ -52,28 +54,27 @@
         }
 
         select {
-            background: #fff;
             border-radius: 8px;
-            color: gray;
             border: none;
             padding: 10px 3px;
             width: 100%;
+            background: white;
+            color: $textGray;
 
             &:focus {
                 outline: none;
-                box-shadow: 0 0 0 2px rgba(14, 140, 255, 0.4);
             }
         }
 
         button {
-            background-color: #0e8cff;
             border-radius: 8px;
-            color: white;
             border: none;
             padding: 10px 15px;
             font-size: 16px;
             margin-left: 12px;
             cursor: pointer;
+            background-color: $primaryBlue;
+            color: white;
 
             &:focus {
                 outline: none;

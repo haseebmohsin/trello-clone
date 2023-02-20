@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
       <AppContext.Provider value={{ data, setData }}>
         <div className={styles.container}>
           {/* These are the two icons at right side of the screen with absolute positioning */}
-          <div className={styles.absolute_icons_container}>
+          <div className={styles.body_fixed_icons_container}>
             <Image src='/checklist.png' alt='checklist' width={26} height={26} />
             <Image src='/list.png' alt='list' width={26} height={26} />
           </div>

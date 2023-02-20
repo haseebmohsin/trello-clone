@@ -25,6 +25,7 @@ export default function SubHeader() {
       isViewsModalOpen: false,
       isFilterModalOpen: false,
       isSortByModalOpen: false,
+      isListActionsModalOpen: false,
     };
 
     const modalProps = Object.entries(modalFlags).reduce((acc, [key, value]) => {
@@ -94,7 +95,7 @@ export default function SubHeader() {
               title='Pinned Card'
               icon='pin'
               isOpen={isPinnedCardsModalOpen}
-              togglePinnedCardsModal={() => toggleModal('isPinnedCardsModalOpen')}
+              toggleModal={() => toggleModal('isPinnedCardsModalOpen')}
             />
           </div>
 
@@ -109,7 +110,7 @@ export default function SubHeader() {
             <ArchiveDropdownModal
               title='Archive'
               isOpen={isArchiveModalOpen}
-              toggleArchiveModal={() => toggleModal('isArchiveModalOpen')}
+              toggleModal={() => toggleModal('isArchiveModalOpen')}
             />
           </div>
 
@@ -122,7 +123,7 @@ export default function SubHeader() {
               title='Views'
               icon='views'
               isOpen={isViewsModalOpen}
-              toggleViewsModal={() => toggleModal('isViewsModalOpen')}
+              toggleModal={() => toggleModal('isViewsModalOpen')}
             />
           </div>
 
@@ -135,7 +136,7 @@ export default function SubHeader() {
               title='Filter'
               icon='filter'
               isOpen={isFilterModalOpen}
-              toggleFilterModal={() => toggleModal('isFilterModalOpen')}
+              toggleModal={() => toggleModal('isFilterModalOpen')}
             />
           </div>
 
@@ -148,7 +149,7 @@ export default function SubHeader() {
               title='Sort By'
               icon='sortBy'
               isOpen={isSortByModalOpen}
-              toggleSortByModal={() => toggleModal('isSortByModalOpen')}
+              toggleModal={() => toggleModal('isSortByModalOpen')}
             />
           </div>
         </div>
