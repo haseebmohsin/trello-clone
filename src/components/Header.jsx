@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import SearchInput from './SearchInput';
-import styles from '@/styles/Header.module.scss';
+import styles from '../styles/Header.module.scss';
 
 export default function Header() {
   return (

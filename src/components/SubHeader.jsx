@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import AppContext from '@/data/AppContext';
+import AppContext from '../data/AppContext';
 import FilterDropdownModal from './modals/FilterDropdownModal';
 import SortByDropdownModal from './modals/SortByDropdownModal';
 import ViewsDropdownModal from './modals/ViewsDropdownModal';
 import ArchiveDropdownModal from './modals/ArchiveDropdownModal';
 import PinnedCardsDropdownModal from './modals/PinnedCardsDropdownModal';
-import styles from '@/styles/SubHeader.module.scss';
+import styles from '../styles/SubHeader.module.scss';
 
 export default function SubHeader() {
   const router = useRouter();

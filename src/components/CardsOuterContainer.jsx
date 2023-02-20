@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Card from './Card';
 import AddCard from './AddCard';
 import ListActionsDropdownModal from './modals/ListActionsDropdownModal';
-import AppContext from '@/data/AppContext';
-import styles from '@/styles/CardsOuterContainer.module.scss';
+import AppContext from '../data/AppContext';
+import styles from '../styles/CardsOuterContainer.module.scss';
 
 export default function CardsOuterContainer({ data, length, category, categoryShort }) {
   const cards_outer_container_body_ref = useRef(null);

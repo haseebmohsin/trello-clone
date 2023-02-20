@@ -1,8 +1,8 @@
-import { pinnedCards } from '@/data/pinnedCards';
+import { pinnedCards } from '../../data/pinnedCards';
 import Card from '../Card';
-import styles from '@/styles/DropdownModal.module.scss';
 import SearchInput from '../SearchInput';
 import Image from 'next/image';
+import styles from '../../styles/DropdownModal.module.scss';
 
 export default function PinnedCardsDropdownModal({ title, icon, isOpen, toggleModal }) {
   return (

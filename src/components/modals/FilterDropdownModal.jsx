@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Checkbox from '../Checkbox';
-import { projects } from '@/data/projects';
-import { tags } from '@/data/tags';
-import { users } from '@/data/users';
-import styles from '@/styles/DropdownModal.module.scss';
+import { projects } from '../../data/projects';
+import { tags } from '../../data/tags';
+import { users } from '../../data/users';
+import styles from '../../styles/DropdownModal.module.scss';
 
 export default function FilterDropdownModal({ title, icon, isOpen, toggleModal }) {
   return (

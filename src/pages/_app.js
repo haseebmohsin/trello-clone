@@ -3,10 +3,10 @@ import Header from '../components/Header';
 import SubHeader from '../components/SubHeader';
 import Sidebar from '../components/sidebar';
 import AppContext from '../data/AppContext';
-import { store } from '@/data/store';
+import { store } from '../data/store';
 import Image from 'next/image';
-import styles from '@/styles/Main.module.scss';
-import '@/styles/globals.scss';
+import styles from '../styles/Main.module.scss';
+import '../styles/globals.scss';
 
 export default function App({ Component, pageProps }) {
   const [data, setData] = useState(store);

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Divider from './Divider';
-import styles from '@/styles/Sidebar.module.scss';
+import styles from '../styles/Sidebar.module.scss';
 
 function Sidebar() {
   const router = useRouter();
