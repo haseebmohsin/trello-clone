@@ -3,7 +3,7 @@ import Checkbox from '../Checkbox';
 import { projects } from '@/data/projects';
 import { tags } from '@/data/tags';
 import { users } from '@/data/users';
-import styles from '@/styles/dropdownModal.module.scss';
+import styles from '@/styles/DropdownModal.module.scss';
 
 export default function FilterDropdownModal({ title, icon, isOpen, toggleModal }) {
   return (

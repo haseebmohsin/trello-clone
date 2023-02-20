@@ -1,4 +1,4 @@
-import styles from '@/styles/dropdownModal.module.scss';
+import styles from '@/styles/DropdownModal.module.scss';
 
 export default function ListActionsDropdownModal({ title, isOpen, toggleModal }) {
   return (

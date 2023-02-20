@@ -1,7 +1,7 @@
 import CardsOuterContainer from '@/components/CardsOuterContainer';
-import AppContext from './AppContext';
+import AppContext from '../data/AppContext';
 import { useContext } from 'react';
-import styles from '@/styles/workflow.module.scss';
+import styles from '@/styles/Workflow.module.scss';
 
 export default function Workflow() {
   const cards = useContext(AppContext);

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '@/styles/dropdownModal.module.scss';
+import styles from '@/styles/DropdownModal.module.scss';
 
 export default function SortByDropdownModal({ title, icon, isOpen, toggleModal }) {
   return (

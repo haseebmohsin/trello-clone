@@ -1,6 +1,6 @@
 import { pinnedCards } from '@/data/pinnedCards';
 import Card from '../Card';
-import styles from '@/styles/dropdownModal.module.scss';
+import styles from '@/styles/DropdownModal.module.scss';
 import SearchInput from '../SearchInput';
 import Image from 'next/image';
 
